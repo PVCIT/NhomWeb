@@ -1,0 +1,72 @@
+﻿.text-danger {
+  color: #b94a48;
+  font-size: 14px;
+  margin-left: 20px;
+}
+.form-control
+{
+    width:35%;
+    height:15px;
+    padding:6px 12px;
+    margin-left: -1px;
+    margin-top: 5px;
+    font-size:14px;
+    line-height:1.428571429;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+.control-label {
+    text-align :right;
+    margin-left: 10px;
+    font-size: 14px;
+}
+#products h3 { 
+    font-size:20px;
+    padding: 17px 0 -20px;
+    padding-bottom:10px;
+    color: Highlight;
+    margin-left: 10px
+}
+.form-group
+{
+    margin-left:40px;
+    margin-bottom: 10px;
+}
+.col-md-10
+{
+    position:relative;
+    min-height:1px;
+    padding-right:15px;
+    padding-left:15px
+}
+.col-md-offset-2{
+    margin-left:16.666666666666664%
+} 
+.btn
+{
+    padding:6px 12px;
+    margin-top: 15px;
+    margin-bottom:0;
+    margin-left:-20px;
+    font-size:14px;
+    font-weight:normal;
+    line-height:1.428571429;
+    text-align:center;
+    white-space:nowrap;
+    vertical-align:middle;
+    cursor:pointer;
+    border:1px solid transparent;
+    border-radius:4px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none
+}
+.btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+

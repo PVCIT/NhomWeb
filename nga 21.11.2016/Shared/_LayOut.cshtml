@@ -1,12 +1,11 @@
-﻿@model EShop.Models.RegisterModel
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
     <title>CSS Free Templates with jQuery Slider</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="~/Content/images/favicon.ico" />
     <link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="~/Content/DangKyCss.css" type="text/css" media="all" />
+
     <script src="~/Scripts/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
     <!--[if IE 6]>
         <script src="js/DD_belatedPNG-min.js" type="text/javascript" charset="utf-8"></script>
@@ -47,6 +46,7 @@
                     <li><a href="#" title="Basket">Basket</a></li>
                     <li><a href="#" title="Checkout">Checkout</a></li>
                     <li><a href="#" title="Contact">Contact</a></li>
+                    <li><a href="#" title="Search">Tìm Kiếm</a></li>
                 </ul>
                 <div class="cl">&nbsp;</div>
             </div>
@@ -182,109 +182,8 @@
                     <!-- End Sidebar -->
                     <!-- Begin Content -->
                     <div id="content">
-                        <!-- Begin Post -->
-                        <div class="post">
-                            <h2> Đăng ký tài khoản <span class="title-bottom"></span></h2>
-                        </div>
-                        <!-- End Post -->
-                        <!-- Begin Products -->
-                        <div id="products">
-                            @using (Html.BeginForm())
-                            {
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                <h3>Thông tin cơ bản</h3>
-                                <!--tên đăng nhập-->
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.TenDangNhap, new { @class = "control-label" })
-                                      <div class="col-md-10">
-                                            @Html.EditorFor(model => model.TenDangNhap, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.TenDangNhap, "", new { @class = "text-danger" })
-                                      </div>
-                                </div>
-                                <!--email-->
-                                <div class="form-group">
-                                     @Html.LabelFor(model => model.Email, new { @class = "control-label" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                        </div>
-                                </div>
-                                <!--Mật khẩu-->
-                                <div class="form-group">
-                                   @Html.LabelFor(model => model.MatKhau, new { @class = "control-label" })
-                                      <div class="col-md-10">
-                                         @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
-                                         @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
-                                      </div>
-                                </div>
-                                <!--xác nhận password-->
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.XacNhanMatKhau, new { @class = "control-label" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.XacNhanMatKhau, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.XacNhanMatKhau, "", new { @class = "text-danger" })
-                                        </div>
-                                </div>
-                                <h3>Thông tin cá nhân</h3>
-                                <!--họ và tên-->
-                                <div class="form-group">
-                                   @Html.LabelFor(model => model.FullName, new { @class = "control-label" })
-                                      <div class="col-md-10">
-                                            @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
-                                      </div>
-                                </div>
-                                <!--ngày sinh-->
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.NgaySinh, new { @class = "control-label" })
-                                      <div class="col-md-10">
-                                          @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control" } })
-                                          @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
-                                      </div>
-                                </div>
-                                <!--giới tính-->
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GioiTinh, new { @class = "control-label" })
-                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                    @Html.RadioButtonFor(model => model.GioiTinh,"Nam")Nam
-                                    <span>&nbsp;&nbsp;</span>
-                                    @Html.RadioButtonFor(model => model.GioiTinh, "Nữ")Nữ
-
-                                </div>
-                                <!--identify-->
-                                <div class="form-group">
-                                        @Html.LabelFor(model => model.Identify, new { @class = "control-label" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.Identify, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.Identify, "", new { @class = "text-danger" })
-                                        </div>
-                                </div>
-                                <!--tel-->
-                                <div class="form-group">
-                                        @Html.LabelFor(model => model.SDT, new { @class = "control-label" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
-                                        </div>
-                                </div>
-                                <!--địa chỉ-->
-                                <div class="form-group">
-                                        @Html.LabelFor(model => model.DiaChi, new { @class = "control-label" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
-                                        </div>
-                                </div>
-                                //button Create
-                                <div class="form-group">
-                                        <div class="col-md-offset-2 col-md-10">
-                                            <input type="submit" value="Create" class="btn btn-default" />
-                                        </div>
-                                </div>
-                            }
-                        </div>
-                        <!-- End Products -->
+                        
+                        @RenderBody()
                     </div>
                     <!-- End Content -->
                     <!-- Begin Right Sidebar -->
@@ -488,3 +387,4 @@
     <!-- End Wrapper -->
 </body>
 </html>
+
